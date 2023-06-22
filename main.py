@@ -47,10 +47,6 @@ def MergeAudioFiles(_fileli):
             elif len(audio_samples) > target_sample_count:
                 audio_samples = audio_samples[:target_sample_count]
 
-            # for j in range(target_sample_count):
-            #     merged_audio[j] = (merged_audio[j] * i + audio_samples[j]) // (i + 1)
-            # for j in range(target_sample_count):
-            #     merged_audio[j] = (merged_audio[j] + a
             merged_audio = array.array('h', [sum(pair) // 2 for pair in zip(merged_audio, audio_samples)])
 
         except Exception as e:
